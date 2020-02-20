@@ -6,18 +6,18 @@
 }
 
 <h2>SignUp</h2>
-
+<link rel="stylesheet" type="text/css" href="~/styles/Styles.css" />
 @using (Html.BeginForm("SignUp", "User", FormMethod.Post))
 {
 
-    <table cellpadding="10">
+    <table cellpadding="10" align="center">
         <tr>
             <td>
                 @Html.Label("First Name")
             </td>
             <td>
                 @Html.TextBoxFor(Model => Model.FirstName)
-                @Html.ValidationMessageFor(Model => Model.FirstName,"",new { style="display:hidden;color:red"})
+                @Html.ValidationMessageFor(Model => Model.FirstName,"",new { @class="error"})
             </td>
         </tr>
         <tr>
@@ -34,7 +34,7 @@
             </td>
             <td>
                 @Html.TextBoxFor(Model => Model.MobileNumber)
-                @Html.ValidationMessageFor(Model => Model.MobileNumber)
+                @Html.ValidationMessageFor(Model => Model.MobileNumber,"",new { @class="error"})
             </td>
         </tr>
         <tr>
@@ -44,7 +44,7 @@
             <td>
                 @Html.RadioButtonFor(Model => Model.Gender, "male")Male
                 @Html.RadioButtonFor(Model => Model.Gender, "female")Female &nbsp; &nbsp; &nbsp;
-                @Html.ValidationMessageFor(Model => Model.Gender)
+                @Html.ValidationMessageFor(Model => Model.Gender,"",new { @class="error"})
             </td>
         </tr>
         <tr>
@@ -53,7 +53,7 @@
             </td>
             <td>
                 @Html.TextBoxFor(Model => Model.MailId)
-                @Html.ValidationMessageFor(Model => Model.MailId)
+                @Html.ValidationMessageFor(Model => Model.MailId ,"",new { @class="error"})
             </td>
         </tr>
         <tr>
@@ -62,7 +62,7 @@
             </td>
             <td>
                 @Html.PasswordFor(Model => Model.Password)
-                @Html.ValidationMessageFor(Model=>Model.Password)
+                @Html.ValidationMessageFor(Model=>Model.Password ,"",new { @class="error"})
             </td>
         </tr>
         <tr>
@@ -71,7 +71,7 @@
             </td>
             <td>
                 @Html.PasswordFor(Model => Model.ConfirmPassword)
-                @Html.ValidationMessageFor(Model=>Model.ConfirmPassword)
+                @Html.ValidationMessageFor(Model=>Model.ConfirmPassword ,"",new { @class="error"})
             </td>
         </tr>
         <tr>

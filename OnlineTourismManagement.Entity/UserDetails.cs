@@ -10,16 +10,18 @@ namespace OnlineTourismManagement.Entity
     }
     public class UserDetails
     {
-        [Required]
+        [Required(ErrorMessage ="First name is required")]
         [DataType(DataType.Text,ErrorMessage ="Accept only text")]
         [RegularExpression(@"^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$", ErrorMessage ="Enter valid name")]
         [MaxLength(30)]
         public string FirstName { get; set; }
 
+        [MaxLength(30)]
         public string LastName { get; set; }
 
         [Required(ErrorMessage = "Phone number required")]
         [DataType(DataType.PhoneNumber)]
+        [RegularExpression(@"^[6789]\d{9}$",ErrorMessage ="Enter valid phone number")]
         public long MobileNumber { get; set; }
 
         [Required(ErrorMessage="Gender required")]
@@ -32,6 +34,7 @@ namespace OnlineTourismManagement.Entity
 
         [Required(ErrorMessage ="Password is required")]
         [DataType(DataType.Password)]
+        [RegularExpression(@"^(?=.*[0-9]+.*)(?=.*[a-zA-Z]+.*)[0-9a-zA-Z]{6,}$",ErrorMessage = "Password must contain at least one letter, at least one number, and be longer than six charaters.")]
         public string Password { get; set; }
 
         [Required(ErrorMessage ="Confirm password is required")]
@@ -40,8 +43,9 @@ namespace OnlineTourismManagement.Entity
         public string ConfirmPassword { get; set; }
 
         public Role UserRole { get; set; }
-        public UserDetails()
-        { }
+
+        
+        public UserDetails() { }
 
         public UserDetails(string firstName, string lastName, long mobileNumber, string gender, string mailId, string password)
         {
