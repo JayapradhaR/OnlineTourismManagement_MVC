@@ -1,7 +1,7 @@
 ﻿using System.Web.Mvc;
 using OnlineTourismManagement.Entity;
 using OnlineTourismManagement.DAL;
-namespace OnlineTourismManagement_MVC.Controllers
+namespace OnlineTourismManagement.Controllers
 {
     public class UserController : Controller
     {

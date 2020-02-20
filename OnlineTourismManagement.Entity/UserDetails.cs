@@ -11,7 +11,7 @@ namespace OnlineTourismManagement.Entity
     public class UserDetails
     {
         [Required]
-        [DataType(DataType.Text)]
+        [DataType(DataType.Text,ErrorMessage ="Accept only text")]
         [RegularExpression(@"^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$", ErrorMessage ="Enter valid name")]
         [MaxLength(30)]
         public string FirstName { get; set; }
