@@ -10,6 +10,12 @@ namespace OnlineTourismManagement_MVC.Controllers
         {
             return View();
         }
+        [HttpGet]
+        public ActionResult SignUp()
+        {
+            return View();
+        }
+        [HttpPost]
         public ActionResult SignUp(UserDetails user)
         {
             UserRepository.AddUser(user);
